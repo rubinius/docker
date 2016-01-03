@@ -35,3 +35,18 @@ RUN cd /tmp && tar jxf rubinius.tar.bz2 && rm *.tar.bz2 && cd rubinius-* && \
     cd /tmp && rm -rf rubinius-*
 
 RUN apt-get clean
+
+RUN apt-get -y remove --purge build-essential \
+                              bison \
+                              llvm-3.5 llvm-3.5-dev \
+                              ruby ruby-dev rake \
+                              wget \
+                              libedit-dev \
+                              libeditline-dev \
+                              libncurses5-dev \
+                              libreadline-dev \
+                              libssl-dev \
+                              libyaml-dev \
+                              zlib1g-dev
+
+RUN apt-get -y autoremove --purge
