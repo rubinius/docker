@@ -1,19 +1,30 @@
 FROM ubuntu:14.04
 
-RUN apt-get -y update && apt-get -y install build-essential bison ruby \
-      ruby-dev rake zlib1g-dev libyaml-dev libssl-dev libreadline-dev \
-      libncurses5-dev llvm-3.5 llvm-3.5-dev libeditline-dev libedit-dev
+RUN locale-gen en_US.UTF-8
+RUN dpkg-reconfigure locales
+
+ENV LANG en_US.UTF-8
+ENV LC_ALL en_US.UTF-8
+ENV PATH /opt/rubinius/bin:/opt/rubinius/gems/bin:$PATH
+
+RUN apt-get -y update && \
+    apt-get -y install build-essential \
+                       bison \
+                       llvm-3.5 llvm-3.5-dev \
+                       ruby ruby-dev rake \
+                       wget \
+                       libedit-dev \
+                       libeditline-dev \
+                       libncurses5-dev \
+                       libreadline-dev \
+                       libssl-dev \
+                       libyaml-dev \
+                       zlib1g-dev
 
 RUN gem install bundler
 
-RUN apt-get -y install wget && \
-    wget http://releases.rubinius.com/rubinius-3.0.tar.bz2 \
+RUN wget http://releases.rubinius.com/rubinius-3.0.tar.bz2 \
          -O /tmp/rubinius.tar.bz2
-
-RUN locale-gen en_US.UTF-8
-RUN dpkg-reconfigure locales
-ENV LANG en_US.UTF-8
-ENV LC_ALL en_US.UTF-8
 
 RUN cd /tmp && tar jxf rubinius.tar.bz2 && rm *.tar.bz2 && cd rubinius-* && \
     bundle install && \
@@ -23,4 +34,4 @@ RUN cd /tmp && tar jxf rubinius.tar.bz2 && rm *.tar.bz2 && cd rubinius-* && \
     rake install && \
     cd /tmp && rm -rf rubinius-*
 
-ENV PATH /opt/rubinius/bin:/opt/rubinius/gems/bin:$PATH
+RUN apt-get clean
