@@ -6,7 +6,7 @@ This repository contains Dockerfiles for Rubinius itelf, as well as other parts 
 
 ## Code of Conduct
 
-Participation in the Rubinius book project is governed by the Rubinius [Code of Conduct](http://rubinius.com/code-of-conduct/).
+Participation in this project is governed by the Rubinius [Code of Conduct](http://rubinius.com/code-of-conduct/).
 
 ## License
 
