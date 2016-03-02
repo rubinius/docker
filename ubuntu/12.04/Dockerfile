@@ -1,7 +1,7 @@
 FROM ubuntu:12.04
 
-locale-gen en_US.UTF-8
-update-locale LC_ALL=un_US.UTF-8 LANG=un_US.UTF-8 LANGUAGE=un_US.UTF-8
+RUN locale-gen en_US.UTF-8
+RUN update-locale LC_ALL=un_US.UTF-8 LANG=un_US.UTF-8 LANGUAGE=un_US.UTF-8
 
 ENV LC_ALL en_US.UTF-8
 ENV LANG en_US.UTF-8
