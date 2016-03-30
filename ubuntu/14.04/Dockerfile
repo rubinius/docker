@@ -14,9 +14,9 @@ RUN apt-get update && apt-get install -y \
         clang-3.4 \
         make
 
-ADD https://rubinius-binaries-rubinius-com.s3-us-west-2.amazonaws.com/ubuntu/14.04/x86_64/rubinius-3.20.tar.bz2 /tmp/rubinius.tar.bz2
+ADD https://rubinius-binaries-rubinius-com.s3-us-west-2.amazonaws.com/ubuntu/14.04/x86_64/rubinius-3.21.tar.bz2 /tmp/rubinius.tar.bz2
 RUN cd /opt && tar xvjf /tmp/rubinius.tar.bz2
 
-ENV PATH /opt/rubinius/3.20/bin:/opt/rubinius/3.20/gems/bin:$PATH
+ENV PATH /opt/rubinius/3.21/bin:/opt/rubinius/3.21/gems/bin:$PATH
 
 CMD ["bash"]
