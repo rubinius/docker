@@ -11,8 +11,7 @@ RUN apt-get update && apt-get install -y \
         bzip2 \
         libyaml-0-2 \
         libssl1.0.0 \
-        clang-3.6 \
-        libedit-dev \
+        clang-3.4 \
         make
 
 ADD https://rubinius-binaries-rubinius-com.s3-us-west-2.amazonaws.com/ubuntu/14.04/x86_64/rubinius-3.30.tar.bz2 /tmp/rubinius.tar.bz2
