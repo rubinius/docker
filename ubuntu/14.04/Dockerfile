@@ -15,9 +15,9 @@ RUN apt-get update && apt-get install -y \
         libedit-dev \
         make
 
-ADD https://rubinius-binaries-rubinius-com.s3-us-west-2.amazonaws.com/ubuntu/14.04/x86_64/rubinius-3.42.tar.bz2 /tmp/rubinius.tar.bz2
+ADD https://rubinius-binaries-rubinius-com.s3-us-west-2.amazonaws.com/ubuntu/14.04/x86_64/rubinius-3.43.tar.bz2 /tmp/rubinius.tar.bz2
 RUN cd /opt && tar xvjf /tmp/rubinius.tar.bz2
 
-ENV PATH /opt/rubinius/3.42/bin:/opt/rubinius/3.42/gems/bin:$PATH
+ENV PATH /opt/rubinius/3.43/bin:/opt/rubinius/3.43/gems/bin:$PATH
 
 CMD ["bash"]
