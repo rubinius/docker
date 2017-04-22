@@ -16,12 +16,12 @@ RUN apt-get update && apt-get install -y \
         zlib1g-dev \
         make
 
-ADD https://rubinius-binaries-rubinius-com.s3-us-west-2.amazonaws.com/ubuntu/14.04/x86_64/rubinius-3.74.tar.bz2 /tmp/rubinius.tar.bz2
+ADD https://rubinius-binaries-rubinius-com.s3-us-west-2.amazonaws.com/ubuntu/14.04/x86_64/rubinius-3.75.tar.bz2 /tmp/rubinius.tar.bz2
 RUN cd /opt && tar xvjf /tmp/rubinius.tar.bz2
 
 RUN ln -sf  /usr/bin/cc
 RUN ln -sf  /usr/bin/c++
 
-ENV PATH /opt/rubinius/3.74/bin:/opt/rubinius/3.74/gems/bin:$PATH
+ENV PATH /opt/rubinius/3.75/bin:/opt/rubinius/3.75/gems/bin:$PATH
 
 CMD ["bash"]
